@@ -18,7 +18,7 @@
             <header class="relative z-10 border-b border-slate-800 bg-slate-950/95 backdrop-blur-lg">
                 <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 lg:px-8">
                     <a href="#home" class="flex items-center gap-3 text-white">
-                        <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-600/20 text-xl font-semibold text-indigo-300">GG</span>
+                        <img src="{{ asset('images/logoss.jpg') }}" alt="Gigotech Global Logo" class="h-8 w-8 rounded-full object-cover">
                         <span class="text-lg font-semibold tracking-wide">Gigotech Global</span>
                     </a>
 
