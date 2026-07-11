@@ -10,16 +10,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <style>
         :root {
             --navy: #0A1628;
             --navy-2: #0F1E36;
             --navy-3: #152847;
-            --blue: #2657D9;
-            --blue-light: #5B9DFF;
-            --gold: #F5B942;
+            /* --blue: #2657D9; */
+            --blue: #f49038;
+            /* --blue-light: #5B9DFF; */
+            --blue-light: #f49038;
+            --gold: #f49038;
             --gold-dim: #C98F2A;
             --paper: #F7F9FC;
             --white: #FFFFFF;
@@ -40,9 +47,12 @@
             --navy: #0F172A;
             --navy-2: #14233D;
             --navy-3: #1E3A5F;
-            --blue: #2563EB;
-            --blue-light: #3B82F6;
-            --gold: #E0A21A;
+            /* --blue: #2563EB; */
+            --blue: #f49038;
+            /* --blue-light: #3B82F6; */
+            --blue-light: #f49038;
+            /* --gold: #E0A21A; */
+            --gold: #f49038;
             --gold-dim: #C98716;
             --paper: #F4F7FF;
             --white: #FFFFFF;
@@ -80,7 +90,8 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            /* font-family: 'Inter', sans-serif; */
+            font-family: 'Poppins', sans-serif;
             color: var(--slate);
             background: linear-gradient(180deg, var(--paper) 0%, var(--surface-soft) 100%);
             line-height: 1.6;
@@ -106,7 +117,8 @@
         h2,
         h3,
         h4 {
-            font-family: 'Sora', sans-serif;
+            /*font-family: 'Sora', sans-serif; */
+            font-family: 'Poppins', sans-serif;
             color: var(--navy);
             letter-spacing: -0.01em;
         }
@@ -253,7 +265,7 @@
         .brand-text strong {
             display: block;
             color: var(--white);
-            font-family: 'Sora', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-weight: 700;
             font-size: 16.5px;
             letter-spacing: 0.01em;
@@ -262,9 +274,9 @@
         .brand-text span {
             display: block;
             color: var(--blue-light);
-            font-size: 10.5px;
+            font-size: 12.5px;
             letter-spacing: 0.16em;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Poppins', monospace;
         }
 
         .nav-links {
@@ -309,7 +321,7 @@
         /* Theme Toggle */
         .theme-toggle {
             background: none;
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: inherit;
             cursor: pointer;
             padding: 8px;
@@ -322,15 +334,18 @@
             font-size: 18px;
             transition: all 0.25s ease;
         }
+
         html.light-mode .theme-toggle {
-            border-color: rgba(15,23,42,0.2);
+            border-color: rgba(15, 23, 42, 0.2);
         }
+
         .theme-toggle:hover {
             transform: rotate(20deg);
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
+
         html.light-mode .theme-toggle:hover {
-            background: rgba(15,23,42,0.08);
+            background: rgba(15, 23, 42, 0.08);
         }
 
         .burger {
@@ -373,7 +388,7 @@
         .mobile-menu a {
             display: block;
             color: var(--white);
-            font-family: 'Sora', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 26px;
             font-weight: 600;
             padding: 16px 0;
@@ -406,15 +421,17 @@
         }
 
         html.light-mode .hero {
-            background: linear-gradient(135deg, #dbeafe 0%, #f0f9ff 70%, #e0f2fe 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 70%, #ffffff 100%);
         }
 
         html.light-mode .hero h1 {
             color: var(--text-primary);
         }
+
         html.light-mode .hero p.lead {
             color: var(--slate);
         }
+
         html.light-mode .hero-stats div strong {
             color: var(--navy);
         }
@@ -488,7 +505,7 @@
         .hero h1 em {
             font-style: normal;
             color: var(--blue-light);
-            background: linear-gradient(180deg, transparent 62%, rgba(91, 157, 255, 0.28) 62%);
+            /* background: linear-gradient(180deg, transparent 62%, rgba(91, 157, 255, 0.28) 62%); */
         }
 
         .hero p.lead {
@@ -513,7 +530,7 @@
 
         .hero-stats div strong {
             display: block;
-            font-family: 'Sora', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 26px;
             color: var(--white);
             font-weight: 700;
@@ -1566,11 +1583,13 @@
         }
 
         html.light-mode .hero {
-            background: radial-gradient(ellipse 120% 80% at 50% -10%, rgba(255, 255, 255, 0.96) 0%, #f1f7ff 45%, #e9f2ff 100%);
+            /* background: radial-gradient(ellipse 120% 80% at 50% -10%, rgba(255, 255, 255, 0.96) 0%, #f1f7ff 45%, #e9f2ff 100%); */
+            background-color: var(--white);
         }
 
         html.light-mode .hero::before {
-            background-image: linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+            /* background-image: linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px); */
+            background-color: var(--white);
         }
 
         html.light-mode .hero h1,
@@ -1808,8 +1827,8 @@
     <header id="siteHeader">
         <nav class="wrap">
             <a href="#top" class="brand">
-                <div class="brand-mark"><img src="http://localhost:8000/images/logos.png"
-                        alt="GIGOTECH Global Network"></div>
+                <div class="brand-mark"><img src="http://localhost:8000/images/logos.png" alt="GIGOTECH Global Network">
+                </div>
                 <div class="brand-text">
                     <strong>GIGOTECH</strong>
                     <span>GLOBAL NETWORK</span>
@@ -1825,7 +1844,8 @@
             <div class="nav-cta">
                 <a href="#contact" class="btn btn-ghost">Sign in</a>
                 <a href="#contact" class="btn btn-primary">Book a Demo</a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle theme">🌙</button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode"
+                    title="Toggle theme">🌙</button>
             </div>
             <button class="burger" id="burgerBtn" aria-label="Open menu">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1840,8 +1860,8 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-top">
             <div class="brand">
-                <div class="brand-mark"><img src="http://localhost:8000/images/logos.png"
-                        alt="GIGOTECH Global Network"></div>
+                <div class="brand-mark"><img src="http://localhost:8000/images/logos.png" alt="GIGOTECH Global Network">
+                </div>
                 <div class="brand-text"><strong>GIGOTECH</strong><span>GLOBAL NETWORK</span></div>
             </div>
             <button class="close-btn" id="closeBtn" aria-label="Close menu">
@@ -1863,31 +1883,26 @@
     <section class="hero" id="top">
         <div class="wrap hero-grid">
             <div>
-                <h1>Software that helps <em>schools run</em> and <em>students learn</em> smarter.</h1>
-                <p class="lead">GIGOTECH Global Network designs school management systems, AI-driven exam preparation,
-                    immersive science simulations and school websites — engineered to fit how Nigerian schools actually
-                    work.</p>
+                <h1>Transforming <em>Education</em> through <em>Innovative</em> Technology.</h1>
+                <p class="lead">GIGOTECH GLOBAL builds intelligent education platforms, school management systems, AI-powered tools,
+                    immersive simulations, and digital solutions that make learning and teaching.</p>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn btn-primary">Book a free demo</a>
                     <a href="#products" class="btn btn-ghost">Explore our solutions →</a>
-                </div>
-                <div class="hero-stats">
-                    <div><strong>40+</strong><span>SCHOOLS ONBOARDED</span></div>
-                    <div><strong>18,000+</strong><span>STUDENTS REACHED</span></div>
-                    <div><strong>5</strong><span>CORE PRODUCTS</span></div>
                 </div>
             </div>
             <div class="orbit-wrap" aria-hidden="true">
                 <div class="orbit-ring r3"></div>
                 <div class="orbit-ring r2"></div>
                 <div class="orbit-ring r1"></div>
-                <div class="orbit-hub"><img src="http://localhost:8000/images/logos.png" alt="GIGOTECH Global Network">
-                </div>
-                <div class="orbit-node n1"><span class="ic">🏫</span>School OS</div>
-                <div class="orbit-node n2"><span class="ic">🤖</span>AI Tutor</div>
-                <div class="orbit-node n3"><span class="ic">🧪</span>Science Labs</div>
-                <div class="orbit-node n4"><span class="ic">🌐</span>School Sites</div>
-                <div class="orbit-node n5"><span class="ic">📊</span>Consulting</div>
+                <div class="orbit-hub"><img src="http://localhost:8000/images/logos.png" alt="GIGOTECH Global Network"></div>
+                <div class="orbit-node n1"><span class="ic"><img src="http://localhost:8000/images/icons/E Learning_48px.png" alt="School OS"></span>School Management System</div>
+                <div class="orbit-node n2"><span class="ic"><img src="http://localhost:8000/images/icons/Google Classroom_48px.png" alt="AI-powered Tutor"></span>AI-powered Tutor</div>
+                <div class="orbit-node n3"><span class="ic"><img src="http://localhost:8000/images/icons/Microscope_48px.png" alt="Virtual Science Labs"></span>Virtual Science Labs</div>
+                <div class="orbit-node n4"><span class="ic"><img src="http://localhost:8000/images/icons/info.png"
+                            alt="EdTech Consulting"></span>EdTech Consulting</div>
+                <div class="orbit-node n5"><span class="ic"><img src="http://localhost:8000/images/icons/Developer_48px.png" alt="School Websites"></span>School Websites</div>
+                
             </div>
         </div>
     </section>
@@ -2226,7 +2241,8 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="brand">
-                        <div class="brand-mark"><img src="http://localhost:8000/images/logos.png" alt="GIGOTECH logo"></div>
+                        <div class="brand-mark"><img src="http://localhost:8000/images/logos.png" alt="GIGOTECH logo">
+                        </div>
                         <div class="brand-text"><strong>GIGOTECH</strong><span>GLOBAL NETWORK</span></div>
                     </div>
                     <p>Transforming education through innovative technology — school management systems, AI tutors and
