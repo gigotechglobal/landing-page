@@ -17,34 +17,34 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body class="antialiased">
 
 <!-- ================= HEADER ================= -->
-    <header id="siteHeader">
-        <nav class="wrap">
-            <a href="#top" class="brand">
-                <div class="brand-mark"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH Global Network">
-                </div>
+    <header id="siteHeader" class="transition-all">
+        <nav class="wrap flex items-center justify-between gap-4 md:gap-6">
+            <a href="#top" class="brand flex items-center gap-3">
+                <div class="brand-mark w-14 h-14 md:w-[60px] md:h-[60px]"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH Global Network" class="w-full h-full object-contain"></div>
                 <div class="brand-text">
-                    <strong>GIGOTECH</strong>
-                    <span>GLOBAL NETWORK</span>
+                    <strong class="text-base md:text-[16.5px]">GIGOTECH</strong>
+                    <span class="text-xs md:text-[12.5px]">GLOBAL NETWORK</span>
                 </div>
             </a>
-            <div class="nav-links">
-                <a href="#products">Solutions</a>
-                <a href="#process">How It Works</a>
-                <a href="#why">Why Us</a>
-                <a href="#testimonials">Stories</a>
-                <a href="#contact">Contact</a>
+            
+            <div class="nav-links hidden md:flex items-center gap-8 lg:gap-9">
+                <a href="#products" class="text-sm font-medium">Solutions</a>
+                <a href="#process" class="text-sm font-medium">How It Works</a>
+                <a href="#why" class="text-sm font-medium">Why Us</a>
+                <a href="#testimonials" class="text-sm font-medium">Stories</a>
+                <a href="#contact" class="text-sm font-medium">Contact</a>
             </div>
-            <div class="nav-cta">
-                <a href="#contact" class="btn btn-ghost">Sign in</a>
-                <a href="#contact" class="btn btn-primary">Book a Demo</a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode"
-                    title="Toggle theme">🌙</button>
+
+            <div class="nav-cta flex items-center gap-3">
+                <a href="#contact" class="btn btn-ghost hidden sm:inline-flex">Sign in</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">🌙</button>
             </div>
-            <button class="burger" id="burgerBtn" aria-label="Open menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+            <button class="burger md:hidden" id="burgerBtn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-7 h-7">
                     <line x1="3" y1="6" x2="21" y2="6" />
                     <line x1="3" y1="12" x2="21" y2="12" />
                     <line x1="3" y1="18" x2="21" y2="18" />
@@ -56,23 +56,21 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-top">
             <div class="brand">
-                <div class="brand-mark"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH Global Network">
-                </div>
+                <div class="brand-mark"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH Global Network"></div>
                 <div class="brand-text"><strong>GIGOTECH</strong><span>GLOBAL NETWORK</span></div>
             </div>
             <button class="close-btn" id="closeBtn" aria-label="Close menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8">
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
             </button>
         </div>
-        <a href="#products">Solutions</a>
-        <a href="#process">How It Works</a>
-        <a href="#why">Why Us</a>
-        <a href="#testimonials">Stories</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="btn btn-primary">Book a Demo</a>
+        <a href="#products" class="text-2xl">Solutions</a>
+        <a href="#process" class="text-2xl">How It Works</a>
+        <a href="#why" class="text-2xl">Why Us</a>
+        <a href="#testimonials" class="text-2xl">Stories</a>
+        <a href="#contact" class="text-2xl">Contact</a>
     </div>
 
     @yield('content')

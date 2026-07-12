@@ -3,19 +3,17 @@
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
-@theme {
+/* @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji', 'Poppins';
-}
+} */
 
 :root {
     --navy: #0A1628;
     --navy-2: #0F1E36;
     --navy-3: #152847;
-    /* --blue: #2657D9; */
-    --blue: #f49038;
-    /* --blue-light: #5B9DFF; */
-    --blue-light: #f49038;
+    --blue: #2657D9; 
+    --blue-light: #5B9DFF;
     --gold: #f49038;
     --gold-dim: #C98F2A;
     --paper: #F7F9FC;
@@ -37,11 +35,8 @@ html.light-mode {
     --navy: #0F172A;
     --navy-2: #14233D;
     --navy-3: #1E3A5F;
-    /* --blue: #2563EB; */
-    --blue: #f49038;
-    /* --blue-light: #3B82F6; */
-    --blue-light: #f49038;
-    /* --gold: #E0A21A; */
+    --blue: #2563EB;
+    --blue-light: #3B82F6;
     --gold: #f49038;
     --gold-dim: #C98716;
     --paper: #F4F7FF;
@@ -87,6 +82,22 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     transition: background 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+span,
+a,
+button,
+input,
+select,
+textarea {
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 img {
@@ -183,7 +194,7 @@ section {
 }
 
 .btn-dark:hover {
-    background: var(--blue);
+    background: var(--gold);
     transform: translateY(-2px);
 }
 
@@ -263,7 +274,7 @@ nav.wrap {
 
 .brand-text span {
     display: block;
-    color: var(--blue-light);
+    color: var(--gold);
     font-size: 12.5px;
     letter-spacing: 0.16em;
     font-family: 'Poppins', monospace;
@@ -405,7 +416,7 @@ html.light-mode .theme-toggle:hover {
 /* ---------- HERO ---------- */
 .hero {
     background: radial-gradient(ellipse 120% 80% at 50% -10%, #14264a 0%, var(--navy) 55%, #060D18 100%);
-    padding: 180px 0 120px;
+    padding: 120px 0 80px;
     overflow: hidden;
     position: relative;
 }
@@ -494,8 +505,7 @@ html.light-mode .hero-stats div strong {
 
 .hero h1 em {
     font-style: normal;
-    color: var(--blue-light);
-    /* background: linear-gradient(180deg, transparent 62%, rgba(91, 157, 255, 0.28) 62%); */
+    color: var(--gold);
 }
 
 .hero p.lead {
@@ -583,7 +593,7 @@ html.light-mode .hero-stats div strong {
     width: 132px;
     height: 132px;
     border-radius: 50%;
-    background: linear-gradient(155deg, var(--blue) 0%, #133C99 100%);
+    background: linear-gradient(155deg, var(--gold) 0%, #133C99 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -591,8 +601,8 @@ html.light-mode .hero-stats div strong {
 }
 
 .orbit-hub img {
-    width: 64px;
-    height: 64px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     filter: brightness(0) invert(1);
 }
@@ -643,7 +653,7 @@ html.light-mode .hero-stats div strong {
 
 .n2 .ic {
     background: rgba(91, 157, 255, 0.18);
-    color: var(--blue-light);
+    color: var(--gold);
 }
 
 .n3 {
@@ -673,7 +683,7 @@ html.light-mode .hero-stats div strong {
 
 .n5 .ic {
     background: rgba(91, 157, 255, 0.18);
-    color: var(--blue-light);
+    color: var(--gold);
 }
 
 @media (max-width: 1080px) {
@@ -748,7 +758,7 @@ html.light-mode .hero-stats div strong {
     font-size: 12.5px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--blue);
+    color: var(--gold);
     font-weight: 600;
     margin-bottom: 16px;
     display: block;
@@ -848,7 +858,7 @@ html.light-mode .hero-stats div strong {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--blue), var(--gold));
+    background: linear-gradient(90deg, var(--gold), var(--gold));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform .35s ease;
@@ -923,13 +933,13 @@ html.light-mode .product-card.flag {
     padding: 5px 10px;
     border-radius: 999px;
     background: rgba(38, 87, 217, 0.07);
-    color: var(--blue);
+    color: var(--gold);
     letter-spacing: 0.02em;
 }
 
 .product-card.flag .p-tags span {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--blue-light);
+    color: var(--gold);
 }
 
 @media (max-width:900px) {
@@ -1128,7 +1138,7 @@ html.light-mode .product-card.flag {
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: var(--blue);
+    background: var(--gold);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1229,7 +1239,7 @@ html.light-mode .product-card.flag {
 
 /* ---------- CTA BANNER ---------- */
 .cta-band {
-    background: linear-gradient(120deg, var(--blue) 0%, #17337A 100%);
+    background: linear-gradient(120deg, var(--gold) 0%, #17337A 100%);
     border-radius: 24px;
     padding: 64px 56px;
     display: flex;
@@ -1312,7 +1322,7 @@ html.light-mode .product-card.flag {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: var(--blue);
+    color: var(--gold);
 }
 
 .contact-info-item strong {
@@ -1378,7 +1388,7 @@ form.contact-form {
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-    border-color: var(--blue);
+    border-color: var(--gold);
     outline: none;
 }
 
@@ -1524,7 +1534,7 @@ html.light-mode .btn-ghost {
 html.light-mode .btn-ghost:hover {
     background: rgba(37, 99, 235, 0.09);
     border-color: rgba(37, 99, 235, 0.24);
-    color: var(--blue);
+    color: var(--gold);
 }
 
 html.light-mode .btn-primary:hover {
@@ -1533,7 +1543,7 @@ html.light-mode .btn-primary:hover {
 }
 
 html.light-mode .btn-dark {
-    background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%);
+    background: linear-gradient(135deg, var(--gold) 0%, #1d4ed8 100%);
     color: var(--white);
 }
 
@@ -1547,7 +1557,7 @@ html.light-mode .brand-text strong {
 }
 
 html.light-mode .brand-text span {
-    color: var(--blue);
+    color: var(--gold);
 }
 
 html.light-mode .nav-links a {
@@ -1555,7 +1565,7 @@ html.light-mode .nav-links a {
 }
 
 html.light-mode .nav-links a:hover {
-    color: var(--blue);
+    color: var(--gold);
 }
 
 html.light-mode .burger,
@@ -1600,7 +1610,7 @@ html.light-mode .orbit-node {
 }
 
 html.light-mode .orbit-ring {
-    border-color: rgba(37, 99, 235, 0.16);
+    border-color: var(--slate);
 }
 
 html.light-mode .orbit-hub {
@@ -1658,7 +1668,7 @@ html.light-mode .process-step p {
 }
 
 html.light-mode .process-num {
-    color: var(--blue);
+    color: var(--gold);
 }
 
 html.light-mode .process-num .ln {
@@ -1707,7 +1717,7 @@ html.light-mode .footer-col a {
 
 /* ---------- REVEAL ANIMATION ---------- */
 .reveal {
-    /* opacity: 0; */
+    opacity: 0;
     transform: translateY(24px);
     transition: opacity .7s ease, transform .7s ease;
 }
@@ -1718,14 +1728,13 @@ html.light-mode .footer-col a {
 }
 
 /* ---------- RESPONSIVE MASTER ---------- */
-@media (max-width:1080px) {
+@media (max-width:1024px) {
     .hero-grid {
         grid-template-columns: 1fr;
     }
 
     .orbit-wrap {
-        height: 420px;
-        order: -1;
+        display: none !important;
     }
 
     .stats-grid {
@@ -1764,27 +1773,54 @@ html.light-mode .footer-col a {
 
 @media (max-width:640px) {
     .wrap {
-        padding: 0 20px;
+        padding: 0 16px;
     }
 
     .hero {
-        padding: 150px 0 80px;
+        padding: 132px 0 72px;
     }
 
     .section-pad {
-        padding: 76px 0;
+        padding: 72px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 8vw, 40px);
+        margin-bottom: 18px;
+    }
+
+    .hero p.lead {
+        font-size: 15.5px;
+        margin-bottom: 28px;
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 34px;
+    }
+
+    .hero-ctas .btn {
+        width: 100%;
+        justify-content: center;
     }
 
     .hero-stats {
-        gap: 26px;
+        gap: 20px;
     }
 
     .stats-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .stat-item {
+        padding-left: 14px;
     }
 
     .orbit-wrap {
-        height: 340px;
+        display: none !important;
     }
 
     .orbit-node {
@@ -1806,6 +1842,91 @@ html.light-mode .footer-col a {
     .orbit-hub img {
         width: 46px;
         height: 46px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .nav-cta {
+        gap: 8px;
+    }
+
+    .brand-mark {
+        width: 48px;
+        height: 48px;
+    }
+
+    .brand-text strong {
+        font-size: 14px;
+    }
+
+    .brand-text span {
+        font-size: 10px;
+    }
+
+    .mobile-menu {
+        padding: 22px 20px;
+    }
+
+    .mobile-menu a {
+        font-size: 22px;
+        padding: 12px 0;
+    }
+
+    .mobile-menu .btn {
+        margin-top: 20px;
+    }
+
+    .sec-title {
+        font-size: clamp(24px, 6.4vw, 32px);
+    }
+
+    .sec-lead {
+        font-size: 15px;
+    }
+
+    .product-card,
+    .test-card,
+    .why-panel,
+    .contact-form {
+        padding: 24px;
+    }
+
+    .why-item {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .cta-band {
+        padding: 36px 22px;
+        margin: 0 16px;
+        max-width: calc(100% - 32px);
+    }
+
+    .cta-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact-info-item {
+        gap: 12px;
+    }
+
+    .footer-grid {
+        gap: 24px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 

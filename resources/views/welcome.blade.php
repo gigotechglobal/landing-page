@@ -10,7 +10,7 @@
         <div class="wrap hero-grid">
             <div>
                 <h1>Transforming <em>Education</em> through <em>Innovative</em> Technology.</h1>
-                <p class="lead">GIGOTECH GLOBAL builds intelligent education platforms, school management systems, AI-powered tools,
+                <p class="lead">We builds intelligent education platforms, school management systems, AI-powered tools,
                     immersive simulations, and digital solutions that make learning and teaching.</p>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn btn-primary">Book a free demo</a>
@@ -21,14 +21,14 @@
                 <div class="orbit-ring r3"></div>
                 <div class="orbit-ring r2"></div>
                 <div class="orbit-ring r1"></div>
-                <div class="orbit-hub"><img src="http://localhost:8000/images/logos.png" alt="GIGOTECH Global Network"></div>
-                <div class="orbit-node n1"><span class="ic"><img src="http://localhost:8000/images/icons/E Learning_48px.png" alt="School OS"></span>School Management System</div>
-                <div class="orbit-node n2"><span class="ic"><img src="http://localhost:8000/images/icons/Google Classroom_48px.png" alt="AI-powered Tutor"></span>AI-powered Tutor</div>
-                <div class="orbit-node n3"><span class="ic"><img src="http://localhost:8000/images/icons/Microscope_48px.png" alt="Virtual Science Labs"></span>Virtual Science Labs</div>
-                <div class="orbit-node n4"><span class="ic"><img src="http://localhost:8000/images/icons/info.png"
+                <div class="orbit-hub"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH Global Network"></div>
+                <div class="orbit-node n1"><span class="ic"><img src="{{ asset('images/icons/E Learning_48px.png') }}" alt="School OS"></span>School Management System</div>
+                <div class="orbit-node n2"><span class="ic"><img src="{{ asset('images/icons/Google Classroom_48px.png') }}" alt="AI-powered Tutor"></span>AI-powered Tutor</div>
+                <div class="orbit-node n3"><span class="ic"><img src="{{ asset('images/icons/Microscope_48px.png') }}" alt="Virtual Science Labs"></span>Virtual Science Labs</div>
+                <div class="orbit-node n4"><span class="ic"><img src="{{ asset('images/icons/info.png') }}"
                             alt="EdTech Consulting"></span>EdTech Consulting</div>
-                <div class="orbit-node n5"><span class="ic"><img src="http://localhost:8000/images/icons/Developer_48px.png" alt="School Websites"></span>School Websites</div>
-                
+                <div class="orbit-node n5"><span class="ic"><img src="{{ asset('images/icons/Developer_48px.png') }}" alt="School Websites"></span>School Websites</div>
+
             </div>
         </div>
     </section>
