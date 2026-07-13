@@ -798,37 +798,6 @@ html.light-mode .hero-stats div strong {
     flex-wrap: wrap;
 }
 
-/* ---------- STATS BAND ---------- */
-.stats-band {
-    background: var(--white);
-    padding: 70px 0;
-    border-bottom: 1px solid var(--line-dark);
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-}
-
-.stat-item {
-    border-left: 2px solid var(--gold);
-    padding-left: 20px;
-}
-
-.stat-item strong {
-    display: block;
-    font-family: 'Sora', sans-serif;
-    font-size: 34px;
-    font-weight: 700;
-    color: var(--navy);
-}
-
-.stat-item span {
-    font-size: 13.5px;
-    color: var(--slate-light);
-    font-family: 'JetBrains Mono', monospace;
-}
 
 /* ---------- PRODUCTS ---------- */
 .products {
@@ -1625,11 +1594,6 @@ html.light-mode .trust {
 html.light-mode .trust-track span {
     color: var(--slate-light);
     border-right-color: rgba(15, 23, 42, 0.06);
-}
-
-html.light-mode .stats-band {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(238, 245, 255, 0.96) 100%);
-    border-bottom-color: rgba(15, 23, 42, 0.06);
 }
 
 html.light-mode .product-card,

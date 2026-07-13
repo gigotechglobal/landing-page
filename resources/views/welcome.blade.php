@@ -10,8 +10,8 @@
         <div class="wrap hero-grid">
             <div>
                 <h1>Transforming <em>Education</em> through <em>Innovative</em> Technology.</h1>
-                <p class="lead">We builds intelligent education platforms, school management systems, AI-powered tools,
-                    immersive simulations, and digital solutions that make learning and teaching.</p>
+                <p class="lead">Empowering schools, educators, and administrators with intelligent software solutions for school management, web
+                presence, and adaptive learning.</p>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn btn-primary">Book a free demo</a>
                     <a href="#products" class="btn btn-ghost">Explore our solutions →</a>
@@ -33,7 +33,7 @@
         </div>
     </section>
 
-    <!-- ================= TRUST MARQUEE ================= -->
+    <!-- ================= TRUST MARQUEE =================
     <div class="trust">
         <div class="trust-inner">
             <div class="trust-track" id="trustTrack">
@@ -49,17 +49,8 @@
                 <span>EDTECH CONSULTING</span>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <!-- ================= STATS BAND ================= -->
-    <div class="stats-band">
-        <div class="wrap stats-grid">
-            <div class="stat-item reveal"><strong>40+</strong><span>SCHOOLS &amp; INSTITUTIONS</span></div>
-            <div class="stat-item reveal"><strong>18K+</strong><span>STUDENTS SUPPORTED</span></div>
-            <div class="stat-item reveal"><strong>92%</strong><span>AVG. RETENTION RATE</span></div>
-            <div class="stat-item reveal"><strong>24/7</strong><span>PLATFORM UPTIME SUPPORT</span></div>
-        </div>
-    </div>
 
     <!-- ================= PRODUCTS ================= -->
     <section class="products section-pad" id="products">
