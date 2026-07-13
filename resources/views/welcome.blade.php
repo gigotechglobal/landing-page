@@ -33,6 +33,60 @@
         </div>
     </section>
 
+    <!-- ================= ABOUT US ================= -->
+    <section class="about section-pad" id="about">
+        <div class="wrap about-grid">
+            <div class="about-media reveal">
+                <img src="{{ asset('images/gigotech-about.jpg') }}" alt="GIGOTECH team working on educational technology solutions">
+                <div class="about-badge">Built for schools • Designed for growth</div>
+            </div>
+            <div class="about-copy reveal">
+                <span class="kicker">About us</span>
+                <h2 class="sec-title">We create modern digital systems that help schools run better and learn smarter.</h2>
+                <p class="sec-lead">GIGOTECH Global Network is a Nigerian edtech partner helping schools and institutions digitize operations, strengthen learning outcomes, and present a more professional digital presence.</p>
+                <div class="about-points">
+                    <div class="about-point">
+                        <strong>Local-first solutions</strong>
+                        <p>We design around Nigerian school realities, from admissions and fee systems to low-bandwidth access and curriculum alignment.</p>
+                    </div>
+                    <div class="about-point">
+                        <strong>End-to-end support</strong>
+                        <p>From setup and training to long-term support, we stay involved so schools can confidently grow with technology.</p>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-dark">Meet the team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TRUSTED INSTITUTIONS ================= -->
+    <section class="partners section-pad" id="partners">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <div>
+                    <span class="kicker">Trusted by</span>
+                    <h2 class="sec-title">Schools and institutions that rely on our digital solutions.</h2>
+                    <p class="sec-lead">We’ve supported institutions across Nigeria with technology that is practical, scalable, and easy to adopt.</p>
+                </div>
+            </div>
+
+            <div class="partners-grid">
+                <div class="partner-card reveal">
+                    <img src="{{ asset('images/partners-images/napps.jpg') }}" alt="Partner institution logo 1">
+                </div>
+                <div class="partner-card reveal">
+                    <img src="{{ asset('images/partners-images/EGG.jpg') }}" alt="Partner institution logo 2">
+                </div>
+                <div class="partner-card reveal">
+                    <img src="{{ asset('images/partners-images/aais.png') }}" alt="Partner institution logo 3">
+                </div>
+                <div class="partner-card reveal">
+                    <img src="{{ asset('images/partners-images/divinelight.png') }}" alt="Partner institution logo 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ================= TRUST MARQUEE =================
     <div class="trust">
         <div class="trust-inner">
@@ -57,8 +111,8 @@
         <div class="wrap">
             <div class="sec-head reveal">
                 <div>
-                    <span class="kicker">What we build</span>
-                    <h2 class="sec-title">One network, five ways to modernize a school.</h2>
+                    <h1 class="kicker">What we build</h1>
+                    <h2 class="sec-title">Comprehensive, intelligent solutions built for educational excellence</h2>
                     <p class="sec-lead">Every product is built by engineers who understand Nigerian school operations
                         first, then layered with the AI and software depth to scale it.</p>
                 </div>
