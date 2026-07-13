@@ -1,292 +1,434 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+﻿@extends('layouts.app')
 
-        <title>Gigotech Global Network</title>
+@section('title', 'GIGOTECH Global Network — EdTech Software &amp; AI Learning Systems, Nigeria')
+@section('description', 'GIGOTECH Global Network builds school management systems, AI-driven exam prep tutors, school websites and simulated science labs for Nigeria\'s education sector.')
 
-        @fonts
+@section('content')
 
-        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @endif
-    </head>
-    <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
-        <div class="relative overflow-hidden">
-            <div class="pointer-events-none absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-slate-900 via-slate-950 to-transparent opacity-75"></div>
-            <header class="relative z-10 border-b border-slate-800 bg-slate-950/95 backdrop-blur-lg">
-                <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 lg:px-8">
-                    <a href="#home" class="flex items-center gap-3 text-white">
-                        <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-600/20 text-xl font-semibold text-indigo-300">GG</span>
-                        <span class="text-lg font-semibold tracking-wide">Gigotech Global</span>
-                    </a>
-
-                    <nav class="hidden items-center gap-8 text-sm font-medium text-slate-300 lg:flex">
-                        <a href="#services" class="transition hover:text-white">Services</a>
-                        <a href="#about" class="transition hover:text-white">About</a>
-                        <a href="#portfolio" class="transition hover:text-white">Projects</a>
-                        <a href="#contact" class="transition hover:text-white">Contact</a>
-                    </nav>
-
-                    <button id="navToggle" class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/90 px-4 py-2 text-sm text-slate-200 lg:hidden">
-                        <span>Menu</span>
-                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
-                    </button>
-                </div>
-                <div id="navMenu" class="hidden border-t border-slate-800 bg-slate-950/95 px-6 py-4 lg:hidden">
-                    <div class="flex flex-col gap-3 text-sm font-medium text-slate-300">
-                        <a href="#services" class="transition hover:text-white">Services</a>
-                        <a href="#about" class="transition hover:text-white">About</a>
-                        <a href="#portfolio" class="transition hover:text-white">Projects</a>
-                        <a href="#contact" class="transition hover:text-white">Contact</a>
-                    </div>
-                </div>
-            </header>
-
-            <main id="home" class="relative z-10">
-                <section class="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
-                    <div class="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-                        <div class="space-y-8">
-                            <div class="inline-flex items-center rounded-full bg-indigo-600/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-indigo-300 ring-1 ring-indigo-500/20">
-                                Modern EdTech + Software Solutions
-                            </div>
-                            <div class="space-y-6">
-                                <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                                    Build digital learning experiences for tomorrow’s global learners.
-                                </h1>
-                                <p class="max-w-2xl text-lg leading-8 text-slate-300">
-                                    Gigotech Global Network delivers intelligent education platforms, web and mobile development, and digital transformation services designed for learning organizations, enterprises, and innovators.
-                                </p>
-                            </div>
-                            <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                                <a href="#contact" class="inline-flex items-center justify-center rounded-full bg-indigo-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
-                                    Start a project
-                                </a>
-                                <a href="#portfolio" class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/90 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-slate-500 hover:text-white">
-                                    View portfolio
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="relative overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/80 px-6 py-10 shadow-2xl shadow-slate-950/20 sm:px-8 lg:px-10">
-                            <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-indigo-500/15 via-transparent to-transparent"></div>
-                            <div class="relative space-y-8">
-                                <div class="space-y-4">
-                                    <div class="inline-flex items-center gap-3 rounded-full bg-slate-800/80 px-4 py-2 text-sm text-slate-300">
-                                        <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
-                                        Trusted by education leaders and startups worldwide
-                                    </div>
-                                    <div class="grid gap-3 sm:grid-cols-2">
-                                        <div class="rounded-3xl border border-slate-800 bg-slate-950/90 p-6">
-                                            <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Projects Delivered</p>
-                                            <p class="mt-4 text-3xl font-semibold text-white">120+</p>
-                                        </div>
-                                        <div class="rounded-3xl border border-slate-800 bg-slate-950/90 p-6">
-                                            <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Average speed</p>
-                                            <p class="mt-4 text-3xl font-semibold text-white">24 weeks</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid gap-4 sm:grid-cols-2">
-                                    <div class="space-y-3 rounded-3xl bg-slate-950/90 p-6 ring-1 ring-white/5">
-                                        <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Insight</p>
-                                        <h2 class="text-xl font-semibold text-white">AI-Powered learning platforms</h2>
-                                        <p class="text-sm leading-6 text-slate-400">Personalized adaptive experiences built for modern classrooms and remote learners.</p>
-                                    </div>
-                                    <div class="space-y-3 rounded-3xl bg-slate-950/90 p-6 ring-1 ring-white/5">
-                                        <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Impact</p>
-                                        <h2 class="text-xl font-semibold text-white">Digital transformation consulting</h2>
-                                        <p class="text-sm leading-6 text-slate-400">Roadmaps, platforms, and training systems that modernize learning operations.</p>
-                                    </div>
-                                </div>
-                                <div class="rounded-[2rem] bg-slate-900/90 p-6 ring-1 ring-slate-700/60">
-                                    <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Contact</p>
-                                    <div class="mt-6 grid gap-4 sm:grid-cols-2">
-                                        <div class="rounded-3xl bg-slate-950/95 p-4">
-                                            <p class="text-sm text-slate-400">Phone</p>
-                                            <p class="mt-2 text-lg font-semibold text-white">+234 806 967 8968</p>
-                                        </div>
-                                        <div class="rounded-3xl bg-slate-950/95 p-4">
-                                            <p class="text-sm text-slate-400">Email</p>
-                                            <p class="mt-2 text-lg font-semibold text-white">gospelin.gi@gmail.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="services" class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-                    <div class="mx-auto max-w-3xl text-center">
-                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300">What we do</p>
-                        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Services built for ambitious education and technology teams.</h2>
-                        <p class="mt-4 text-base leading-7 text-slate-400">From custom software to AI-enabled learning systems, we help brands create engaging digital experiences for users across the globe.</p>
-                    </div>
-
-                    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                        <article class="rounded-3xl border border-slate-800 bg-slate-900/90 p-8 shadow-xl shadow-slate-950/10">
-                            <span class="inline-flex rounded-full bg-indigo-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-indigo-200">Service</span>
-                            <h3 class="mt-6 text-xl font-semibold text-white">Custom educational applications</h3>
-                            <p class="mt-3 text-slate-400">Design and build scalable platforms that support interactive learning, assessments, and student management.</p>
-                        </article>
-                        <article class="rounded-3xl border border-slate-800 bg-slate-900/90 p-8 shadow-xl shadow-slate-950/10">
-                            <span class="inline-flex rounded-full bg-indigo-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-indigo-200">Service</span>
-                            <h3 class="mt-6 text-xl font-semibold text-white">Mobile & web development</h3>
-                            <p class="mt-3 text-slate-400">Launch polished web apps and mobile experiences that deliver consistent performance across devices.</p>
-                        </article>
-                        <article class="rounded-3xl border border-slate-800 bg-slate-900/90 p-8 shadow-xl shadow-slate-950/10">
-                            <span class="inline-flex rounded-full bg-indigo-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-indigo-200">Service</span>
-                            <h3 class="mt-6 text-xl font-semibold text-white">AI-powered learning platforms</h3>
-                            <p class="mt-3 text-slate-400">Use generative AI and analytics to personalize learning journeys and improve engagement.</p>
-                        </article>
-                        <article class="rounded-3xl border border-slate-800 bg-slate-900/90 p-8 shadow-xl shadow-slate-950/10">
-                            <span class="inline-flex rounded-full bg-indigo-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-indigo-200">Service</span>
-                            <h3 class="mt-6 text-xl font-semibold text-white">Full-stack software engineering</h3>
-                            <p class="mt-3 text-slate-400">Deliver end-to-end product development with rigorous QA, reliable deployment, and ongoing support.</p>
-                        </article>
-                        <article class="rounded-3xl border border-slate-800 bg-slate-900/90 p-8 shadow-xl shadow-slate-950/10">
-                            <span class="inline-flex rounded-full bg-indigo-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-indigo-200">Service</span>
-                            <h3 class="mt-6 text-xl font-semibold text-white">EdTech consulting & digital transformation</h3>
-                            <p class="mt-3 text-slate-400">Create roadmaps and strategies that help institutions transition to modern digital education systems.</p>
-                        </article>
-                        <article class="rounded-3xl border border-slate-800 bg-slate-900/90 p-8 shadow-xl shadow-slate-950/10">
-                            <span class="inline-flex rounded-full bg-indigo-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-indigo-200">Service</span>
-                            <h3 class="mt-6 text-xl font-semibold text-white">Platform integration & automation</h3>
-                            <p class="mt-3 text-slate-400">Connect tools, learning management systems, and analytics pipelines for smoother operations.</p>
-                        </article>
-                    </div>
-                </section>
-
-                <section id="about" class="mx-auto max-w-7xl px-6 pb-16 lg:px-8 lg:pb-24">
-                    <div class="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-                        <div class="rounded-[2rem] bg-slate-900/90 p-10 ring-1 ring-slate-700/60">
-                            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-300">About Gigotech</p>
-                            <h2 class="mt-6 text-3xl font-semibold text-white sm:text-4xl">We partner with education and technology teams to build meaningful digital experiences.</h2>
-                            <p class="mt-6 text-base leading-8 text-slate-400">Gigotech Global Network combines design thinking, engineering excellence, and education expertise to deliver solutions that scale. Our approach balances clarity, creativity, and measurable results so your product is intuitive, secure, and future-ready.</p>
-                            <div class="mt-8 space-y-4 text-slate-300">
-                                <div class="flex items-start gap-4">
-                                    <div class="mt-1 h-3 w-3 rounded-full bg-indigo-400"></div>
-                                    <p class="leading-7">End-to-end product strategy, UX, and development for education platforms.</p>
-                                </div>
-                                <div class="flex items-start gap-4">
-                                    <div class="mt-1 h-3 w-3 rounded-full bg-indigo-400"></div>
-                                    <p class="leading-7">Secure cloud architecture, APIs, analytics, and automation across learning ecosystems.</p>
-                                </div>
-                                <div class="flex items-start gap-4">
-                                    <div class="mt-1 h-3 w-3 rounded-full bg-indigo-400"></div>
-                                    <p class="leading-7">AI integration that supports adaptive learning, insights, and personalization.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid gap-6 sm:grid-cols-2">
-                            <div class="rounded-[2rem] bg-slate-900/90 p-8 ring-1 ring-slate-700/60">
-                                <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Mission</p>
-                                <h3 class="mt-4 text-xl font-semibold text-white">Transform education through innovation.</h3>
-                                <p class="mt-3 text-slate-400">We help organizations deliver modern learning experiences that are easy to adopt and simple to scale.</p>
-                            </div>
-                            <div class="rounded-[2rem] bg-slate-900/90 p-8 ring-1 ring-slate-700/60">
-                                <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Vision</p>
-                                <h3 class="mt-4 text-xl font-semibold text-white">Global learning powered by technology.</h3>
-                                <p class="mt-3 text-slate-400">Our products are built to empower educators, learners, and administrators everywhere.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="portfolio" class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-                    <div class="mx-auto max-w-3xl text-center">
-                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300">Portfolio</p>
-                        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Selected projects that showcase our technical craftsmanship.</h2>
-                        <p class="mt-4 text-base leading-7 text-slate-400">A mix of learning ecosystems, mobile-first software, and enterprise-grade platforms delivered with precision and polish.</p>
-                    </div>
-
-                    <div class="mt-12 grid gap-6 lg:grid-cols-3">
-                        <article class="group overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/90 transition hover:-translate-y-1 hover:border-indigo-500/40 hover:shadow-xl">
-                            <div class="p-8">
-                                <p class="text-sm uppercase tracking-[0.24em] text-slate-500">edtech platform</p>
-                                <h3 class="mt-4 text-2xl font-semibold text-white">Campus learning hub</h3>
-                                <p class="mt-4 text-slate-400">A blended learning system with analytics dashboards, course workflows, and adaptive modules.</p>
-                            </div>
-                        </article>
-                        <article class="group overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/90 transition hover:-translate-y-1 hover:border-indigo-500/40 hover:shadow-xl">
-                            <div class="p-8">
-                                <p class="text-sm uppercase tracking-[0.24em] text-slate-500">mobile app</p>
-                                <h3 class="mt-4 text-2xl font-semibold text-white">Learning companion app</h3>
-                                <p class="mt-4 text-slate-400">A mobile experience that delivers microlearning, notifications, and progress tracking.</p>
-                            </div>
-                        </article>
-                        <article class="group overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/90 transition hover:-translate-y-1 hover:border-indigo-500/40 hover:shadow-xl">
-                            <div class="p-8">
-                                <p class="text-sm uppercase tracking-[0.24em] text-slate-500">analytics engine</p>
-                                <h3 class="mt-4 text-2xl font-semibold text-white">Insights and automation</h3>
-                                <p class="mt-4 text-slate-400">An analytics platform built to measure engagement, outcomes, and operational efficiency.</p>
-                            </div>
-                        </article>
-                    </div>
-                </section>
-
-                <section id="contact" class="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
-                    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-                        <div class="rounded-[2rem] bg-slate-900/90 p-10 ring-1 ring-slate-700/60">
-                            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-300">Get in touch</p>
-                            <h2 class="mt-6 text-3xl font-semibold text-white sm:text-4xl">Let’s shape your next digital learning experience.</h2>
-                            <p class="mt-6 text-base leading-8 text-slate-400">Whether you need a full platform, an app, or a technology strategy, we’ll help you define the right solution for your team.</p>
-                            <div class="mt-10 space-y-5 text-sm text-slate-300">
-                                <div class="rounded-3xl bg-slate-950/95 p-5">
-                                    <p class="font-semibold text-white">Phone</p>
-                                    <p class="mt-2 text-slate-400">+234 806 967 8968</p>
-                                </div>
-                                <div class="rounded-3xl bg-slate-950/95 p-5">
-                                    <p class="font-semibold text-white">Email</p>
-                                    <p class="mt-2 text-slate-400">gospelin.gi@gmail.com</p>
-                                </div>
-                                <div class="rounded-3xl bg-slate-950/95 p-5">
-                                    <p class="font-semibold text-white">Website</p>
-                                    <p class="mt-2 text-slate-400">www.gigotechglobal.ng</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <form action="#" class="space-y-6 rounded-[2rem] border border-slate-800 bg-slate-900/90 p-10 shadow-2xl shadow-slate-950/10">
-                            <div class="grid gap-6 sm:grid-cols-2">
-                                <label class="block text-sm font-medium text-slate-200">
-                                    Name
-                                    <input type="text" placeholder="Your name" class="mt-3 w-full rounded-3xl border border-slate-800 bg-slate-950/95 px-4 py-3 text-sm text-white outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" />
-                                </label>
-                                <label class="block text-sm font-medium text-slate-200">
-                                    Email
-                                    <input type="email" placeholder="you@example.com" class="mt-3 w-full rounded-3xl border border-slate-800 bg-slate-950/95 px-4 py-3 text-sm text-white outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20" />
-                                </label>
-                            </div>
-
-                            <label class="block text-sm font-medium text-slate-200">
-                                Message
-                                <textarea rows="5" placeholder="Tell us about your project" class="mt-3 w-full rounded-3xl border border-slate-800 bg-slate-950/95 px-4 py-3 text-sm text-white outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"></textarea>
-                            </label>
-
-                            <button type="submit" class="inline-flex w-full items-center justify-center rounded-full bg-indigo-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">
-                                Send message
-                            </button>
-                        </form>
-                    </div>
-                </section>
-            </main>
-        </div>
-
-        <footer class="border-t border-slate-800 bg-slate-950/90 py-10">
-            <div class="mx-auto flex max-w-7xl flex-col gap-8 px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-                <div>
-                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300">Gigotech Global Network</p>
-                    <p class="mt-4 max-w-xl text-sm leading-6 text-slate-400">A technology partner for education organizations seeking modern, scalable software and AI-enabled learning solutions.</p>
-                </div>
-                <div class="flex flex-col gap-4 text-sm text-slate-400 sm:flex-row sm:items-center sm:gap-10">
-                    <a href="#services" class="transition hover:text-white">Services</a>
-                    <a href="#portfolio" class="transition hover:text-white">Projects</a>
-                    <a href="#contact" class="transition hover:text-white">Contact</a>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+        <div class="wrap hero-grid">
+            <div>
+                <h1>Transforming <em>Education</em> through <em>Innovative</em> Technology.</h1>
+                <p class="lead">Empowering schools, educators, and administrators with intelligent software solutions for school management, web
+                presence, and adaptive learning.</p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-primary">Book a free demo</a>
+                    <a href="#products" class="btn btn-ghost">Explore our solutions →</a>
                 </div>
             </div>
-        </footer>
-    </body>
-</html>
+            <div class="orbit-wrap" aria-hidden="true">
+                <div class="orbit-ring r3"></div>
+                <div class="orbit-ring r2"></div>
+                <div class="orbit-ring r1"></div>
+                <div class="orbit-hub"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH Global Network"></div>
+                <div class="orbit-node n1"><span class="ic"><img src="{{ asset('images/icons/E Learning_48px.png') }}" alt="School OS"></span>School Management System</div>
+                <div class="orbit-node n2"><span class="ic"><img src="{{ asset('images/icons/Google Classroom_48px.png') }}" alt="AI-powered Tutor"></span>AI-powered Tutor</div>
+                <div class="orbit-node n3"><span class="ic"><img src="{{ asset('images/icons/Microscope_48px.png') }}" alt="Virtual Science Labs"></span>Virtual Science Labs</div>
+                <div class="orbit-node n4"><span class="ic"><img src="{{ asset('images/icons/info.png') }}"
+                            alt="EdTech Consulting"></span>EdTech Consulting</div>
+                <div class="orbit-node n5"><span class="ic"><img src="{{ asset('images/icons/Developer_48px.png') }}" alt="School Websites"></span>School Websites</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TRUST MARQUEE =================
+    <div class="trust">
+        <div class="trust-inner">
+            <div class="trust-track" id="trustTrack">
+                <span>SCHOOL MANAGEMENT SYSTEMS</span>
+                <span>AI EXAM PREP TUTORS</span>
+                <span>VIRTUAL SCIENCE LABS</span>
+                <span>SCHOOL WEBSITES</span>
+                <span>EDTECH CONSULTING</span>
+                <span>SCHOOL MANAGEMENT SYSTEMS</span>
+                <span>AI EXAM PREP TUTORS</span>
+                <span>VIRTUAL SCIENCE LABS</span>
+                <span>SCHOOL WEBSITES</span>
+                <span>EDTECH CONSULTING</span>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- ================= PRODUCTS ================= -->
+    <section class="products section-pad" id="products">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <div>
+                    <span class="kicker">What we build</span>
+                    <h2 class="sec-title">One network, five ways to modernize a school.</h2>
+                    <p class="sec-lead">Every product is built by engineers who understand Nigerian school operations
+                        first, then layered with the AI and software depth to scale it.</p>
+                </div>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card flag reveal">
+                    <div class="p-icon">🏫</div>
+                    <h3>School Management System</h3>
+                    <p>A single dashboard for admissions, fees, attendance, timetabling, report cards and staff payroll
+                        — built for how Nigerian schools actually run their terms.</p>
+                    <div class="p-tags"><span>ADMIN</span><span>FEES &amp; BILLING</span><span>REPORT
+                            CARDS</span><span>PARENT PORTAL</span></div>
+                </div>
+
+                <div class="product-card reveal">
+                    <div class="p-icon">🤖</div>
+                    <h3>AI Exam Prep Tutor</h3>
+                    <p>A personalized AI tutor that studies each learner's weak spots and builds a WAEC, NECO and
+                        JAMB-aligned practice plan around them.</p>
+                    <div class="p-tags"><span>ADAPTIVE</span><span>WAEC/JAMB</span></div>
+                </div>
+
+                <div class="product-card reveal">
+                    <div class="p-icon">🧪</div>
+                    <h3>Simulated Science Labs</h3>
+                    <p>Game-simulated practicals for Physics, Chemistry and Biology, so students can run experiments
+                        safely on any device, lab or no lab.</p>
+                    <div class="p-tags"><span>PHYSICS</span><span>CHEMISTRY</span><span>BIOLOGY</span></div>
+                </div>
+
+                <div class="product-card reveal">
+                    <div class="p-icon">🌐</div>
+                    <h3>School Websites</h3>
+                    <p>Fast, mobile-ready websites that give schools a professional front door — admissions forms, news,
+                        staff pages and portal logins included.</p>
+                    <div class="p-tags"><span>ADMISSIONS</span><span>SEO-READY</span></div>
+                </div>
+
+                <div class="product-card reveal">
+                    <div class="p-icon">📊</div>
+                    <h3>EdTech Consulting &amp; Digital Transformation</h3>
+                    <p>We help proprietors and school boards plan the move from paper registers to a fully digital
+                        campus, step by step, with training included.</p>
+                    <div class="p-tags"><span>STRATEGY</span><span>TRAINING</span><span>ROLLOUT</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROCESS ================= -->
+    <section class="process section-pad" id="process">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <div>
+                    <span class="kicker on-dark">How it works</span>
+                    <h2 class="sec-title on-dark">From first call to a fully digital campus.</h2>
+                </div>
+            </div>
+            <div class="process-grid">
+                <div class="process-step reveal">
+                    <div class="process-num">01<span class="ln"></span></div>
+                    <h4>Discovery</h4>
+                    <p>We spend time understanding your school's size, workflow and biggest pain points before proposing
+                        anything.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-num">02<span class="ln"></span></div>
+                    <h4>Build &amp; Configure</h4>
+                    <p>We set up or build the right products for you — school system, AI tutor, labs, site — configured
+                        to your terms and curriculum.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-num">03<span class="ln"></span></div>
+                    <h4>Train Your Team</h4>
+                    <p>Admins, teachers and bursary staff get hands-on training, so the platform is used with confidence
+                        from week one.</p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-num">04<span class="ln"></span></div>
+                    <h4>Support &amp; Improve</h4>
+                    <p>We stay on as your tech partner — monitoring uptime, shipping updates and adding features as your
+                        school grows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= WHY US ================= -->
+    <section class="why section-pad" id="why">
+        <div class="wrap why-grid">
+            <div>
+                <span class="kicker reveal">Why Gigotech</span>
+                <h2 class="sec-title reveal">Built for Nigerian classrooms, engineered like global software.</h2>
+                <div class="why-list">
+                    <div class="why-item reveal">
+                        <div class="wi-icon">🇳🇬</div>
+                        <div>
+                            <h4>Local context, real curriculum</h4>
+                            <p>Our products are mapped to WAEC, NECO and JAMB syllabuses, and priced for the realities
+                                of Nigerian schools.</p>
+                        </div>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="wi-icon">⚙️</div>
+                        <div>
+                            <h4>Full-stack, not a patchwork</h4>
+                            <p>One team builds your school system, website and AI tools — so everything talks to
+                                everything, from day one.</p>
+                        </div>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="wi-icon">📶</div>
+                        <div>
+                            <h4>Built for low-bandwidth reality</h4>
+                            <p>Lightweight, offline-friendly interfaces designed to work reliably even on unstable
+                                connections.</p>
+                        </div>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="wi-icon">🎓</div>
+                        <div>
+                            <h4>Hands-on onboarding</h4>
+                            <p>We don't just hand over a login — we train your staff and stay available for support long
+                                after launch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="why-panel reveal">
+                <span class="quote-mark">"</span>
+                <p class="q">Let's shape tomorrow's learning experiences together — one school, one classroom, one
+                    student at a time.</p>
+                <div class="who">
+                    <div class="who-avatar">GG</div>
+                    <div><strong>GIGOTECH Global Network</strong><span>Transforming education through innovative
+                            technology</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="testimonials section-pad" id="testimonials">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <div>
+                    <span class="kicker">Stories from the field</span>
+                    <h2 class="sec-title">Schools that made the switch.</h2>
+                </div>
+            </div>
+            <div class="test-grid">
+                <div class="test-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p>Fee collection and report cards used to take our staff days. With Gigotech's system, it's a
+                        same-day process now, and parents can see everything from their phones.</p>
+                    <div class="test-who">
+                        <div class="av">FA</div>
+                        <div><strong>Funmilayo A.</strong><span>School Administrator, Lagos</span></div>
+                    </div>
+                </div>
+                <div class="test-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p>Our SS3 students used the AI tutor for JAMB prep and their mock scores improved noticeably within
+                        one term. It knows exactly where each student is struggling.</p>
+                    <div class="test-who">
+                        <div class="av">TO</div>
+                        <div><strong>Tunde O.</strong><span>Vice Principal, Abuja</span></div>
+                    </div>
+                </div>
+                <div class="test-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <p>We don't have a fully equipped physics lab, so the simulated practicals have been a real bridge
+                        for our students ahead of their exams.</p>
+                    <div class="test-who">
+                        <div class="av">CE</div>
+                        <div><strong>Chiamaka E.</strong><span>Science Coordinator, Port Harcourt</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA BAND ================= -->
+    <section style="padding:0 0 110px;">
+        <div class="cta-band reveal">
+            <div>
+                <h3>Ready to bring your school into the network?</h3>
+                <p>Book a free walkthrough and we'll show you exactly which product fits your school first.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="#contact" class="btn btn-primary">Book a free demo</a>
+                <a href="tel:+2348069678968" class="btn btn-ghost">Call +234 806 967 8968</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact section-pad" id="contact">
+        <div class="wrap contact-grid">
+            <div>
+                <span class="kicker reveal">Get in touch</span>
+                <h2 class="sec-title reveal">Tell us about your school, we'll take it from there.</h2>
+                <p class="sec-lead reveal">Whether you need one product or the full network, our team will map out the
+                    right starting point for your school's size and budget.</p>
+
+                <div class="contact-info-list">
+                    <div class="contact-info-item reveal">
+                        <div class="ci-icon">
+                            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </div>
+                        <div><strong>Phone</strong><a href="tel:+2348069678968">+234 806 967 8968</a></div>
+                    </div>
+                    <div class="contact-info-item reveal">
+                        <div class="ci-icon">
+                            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16v16H4z" opacity="0" />
+                                <path
+                                    d="M22 6c0 1.1-.9 2-2 2H4a2 2 0 0 1-2-2m20 0a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2m20 0v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6m20 0-10 7L2 6" />
+                            </svg>
+                        </div>
+                        <div><strong>Email</strong><a
+                                href="mailto:contact@gigotechglobal.com.ng">contact@gigotechglobal.com.ng</a></div>
+                    </div>
+                    <div class="contact-info-item reveal">
+                        <div class="ci-icon">
+                            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path
+                                    d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            </svg>
+                        </div>
+                        <div><strong>Website</strong><a href="https://www.gigotechglobal.com.ng" target="_blank"
+                                rel="noopener">www.gigotechglobal.com.ng</a></div>
+                    </div>
+                    <div class="contact-info-item reveal">
+                        <div class="ci-icon">
+                            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div><strong>Location</strong><span class="val">Nigeria — serving schools nationwide</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form reveal" id="contactForm">
+                <div class="form-row">
+                    <div class="field"><label for="fname">Full name</label><input id="fname" type="text"
+                            placeholder="Your name" required></div>
+                    <div class="field"><label for="fschool">School name</label><input id="fschool" type="text"
+                            placeholder="Your school"></div>
+                </div>
+                <div class="form-row">
+                    <div class="field"><label for="femail">Email</label><input id="femail" type="email"
+                            placeholder="you@school.com" required></div>
+                    <div class="field"><label for="fphone">Phone</label><input id="fphone" type="tel"
+                            placeholder="+234"></div>
+                </div>
+                <div class="form-row">
+                    <div class="field full">
+                        <label for="finterest">I'm interested in</label>
+                        <select id="finterest">
+                            <option>School Management System</option>
+                            <option>AI Exam Prep Tutor</option>
+                            <option>Simulated Science Labs</option>
+                            <option>School Website</option>
+                            <option>EdTech Consulting</option>
+                            <option>Not sure yet — advise me</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="field full">
+                        <label for="fmsg">Tell us about your school</label>
+                        <textarea id="fmsg"
+                            placeholder="Number of students, current challenges, timeline..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-dark">Request a free demo</button>
+            </form>
+        </div>
+    </section>
+@endsection
+
+@push('scripts')
+      <script>
+        // Sticky header state
+        const header = document.getElementById('siteHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
+        });
+
+        // Mobile menu
+        const burger = document.getElementById('burgerBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        burger.addEventListener('click', () => mobileMenu.classList.add('open'));
+        closeBtn.addEventListener('click', () => mobileMenu.classList.remove('open'));
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+        // Theme Toggle with system preference
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlEl = document.documentElement;
+
+        function setTheme(isLight) {
+            if (isLight) {
+                htmlEl.classList.add('light-mode');
+                themeToggle.textContent = '☀️';
+                themeToggle.setAttribute('title', 'Switch to dark mode');
+            } else {
+                htmlEl.classList.remove('light-mode');
+                themeToggle.textContent = '🌙';
+                themeToggle.setAttribute('title', 'Switch to light mode');
+            }
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        }
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme');
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+        if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+            setTheme(true);
+        } else {
+            setTheme(false);
+        }
+
+        // Listen for system changes
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches);
+            }
+        });
+
+        themeToggle.addEventListener('click', () => {
+            const isCurrentlyLight = htmlEl.classList.contains('light-mode');
+            setTheme(!isCurrentlyLight);
+        });
+
+        // Reveal on scroll
+        const revealEls = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+            });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => io.observe(el));
+
+        // Contact form (demo only, no backend)
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const original = btn.textContent;
+            btn.textContent = 'Request sent ✓';
+            btn.style.background = '#2657D9';
+            btn.style.color = '#fff';
+            form.reset();
+            setTimeout(() => { btn.textContent = original; btn.style.background = ''; btn.style.color = ''; }, 3200);
+        });
+    </script>
+@endpush
