@@ -35,7 +35,8 @@
     <header id="siteHeader" class="transition-all">
         <nav class="wrap flex items-center justify-between gap-4 md:gap-6">
             <a href="#top" class="brand flex items-center gap-3">
-                <div class="brand-mark w-14 h-14 md:w-[60px] md:h-[60px]"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH Global Network" class="w-full h-full object-contain" loading="lazy" decoding="async"></div>
+                <div class="brand-mark w-14 h-14 md:w-15 md:h-15"><img src="{{ asset('images/logos.png') }}"
+                        alt="GIGOTECH Global Network" class="w-full h-full object-contain" loading="lazy" decoding="async"></div>
                 <div class="brand-text">
                     <strong class="text-base md:text-[16.5px]">GIGOTECH</strong>
                     <span class="text-xs md:text-[12.5px]">GLOBAL NETWORK</span>
