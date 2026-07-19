@@ -16,9 +16,16 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
-    server: {
-        watch: {
-            ignored: ['**/storage/framework/views/**'],
-        },
-    },
+    // server: {
+    //     host: '0.0.0.0',
+    //     port: 5173,
+    //     strictPort: true,
+    //     https: false,
+    //     hmr: {
+    //         host: '0.0.0.0',
+    //     },
+    //     // watch: {
+    //     //     ignored: ['**/storage/framework/views/**'],
+    //     // },
+    // },
 });

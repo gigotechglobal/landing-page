@@ -1,20 +1,32 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'GIGOTECH Global Network — EdTech Software &amp; AI Learning Systems, Nigeria')</title>
-    <meta name="description"
-        content="@yield('description', 'GIGOTECH Global Network builds school management systems, AI-driven exam prep tutors, school websites and simulated science labs for Nigeria\'s education sector.')">
+
+    <!-- Dynamic Title & Description -->
+    <title>@yield('title', 'GIGOTECH GLOBAL NETWORK — EdTech Software & AI Learning Systems, Nigeria')</title>
+    <meta name="description" content="@yield('description', '...')">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="@yield('title')">
+    <meta property="og:description" content="@yield('description')">
+    <meta property="og:image" content="{{ asset('images/og-image.jpg') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{{ asset('images/logos.png') }}" as="image">
 </head>
 
 <body class="antialiased">
@@ -23,7 +35,7 @@
     <header id="siteHeader" class="transition-all">
         <nav class="wrap flex items-center justify-between gap-4 md:gap-6">
             <a href="#top" class="brand flex items-center gap-3">
-                <div class="brand-mark w-14 h-14 md:w-[60px] md:h-[60px]"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH Global Network" class="w-full h-full object-contain"></div>
+                <div class="brand-mark w-14 h-14 md:w-[60px] md:h-[60px]"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH Global Network" class="w-full h-full object-contain" loading="lazy" decoding="async"></div>
                 <div class="brand-text">
                     <strong class="text-base md:text-[16.5px]">GIGOTECH</strong>
                     <span class="text-xs md:text-[12.5px]">GLOBAL NETWORK</span>
@@ -81,7 +93,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="brand">
-                        <div class="brand-mark"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH logo">
+                        <div class="brand-mark"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH logo" loading="lazy" decoding="async">
                         </div>
                         <div class="brand-text"><strong>GIGOTECH</strong><span>GLOBAL NETWORK</span></div>
                     </div>

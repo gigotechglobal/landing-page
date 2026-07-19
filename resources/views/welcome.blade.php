@@ -21,13 +21,13 @@
                 <div class="orbit-ring r3"></div>
                 <div class="orbit-ring r2"></div>
                 <div class="orbit-ring r1"></div>
-                <div class="orbit-hub"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH Global Network"></div>
-                <div class="orbit-node n1"><span class="ic"><img src="{{ asset('images/icons/E Learning_48px.png') }}" alt="School OS"></span>School Management System</div>
-                <div class="orbit-node n2"><span class="ic"><img src="{{ asset('images/icons/Google Classroom_48px.png') }}" alt="AI-powered Tutor"></span>AI-powered Tutor</div>
-                <div class="orbit-node n3"><span class="ic"><img src="{{ asset('images/icons/Microscope_48px.png') }}" alt="Virtual Science Labs"></span>Virtual Science Labs</div>
+                <div class="orbit-hub"><img src="{{ asset('images/logos.png') }}" alt="GIGOTECH Global Network" loading="lazy" decoding="async"></div>
+                <div class="orbit-node n1"><span class="ic"><img src="{{ asset('images/icons/E Learning_48px.png') }}" alt="School OS" loading="lazy" decoding="async"></span>School Management System</div>
+                <div class="orbit-node n2"><span class="ic"><img src="{{ asset('images/icons/Google Classroom_48px.png') }}" alt="AI-powered Tutor" loading="lazy" decoding="async"></span>AI-powered Tutor</div>
+                <div class="orbit-node n3"><span class="ic"><img src="{{ asset('images/icons/Microscope_48px.png') }}" alt="Virtual Science Labs" loading="lazy" decoding="async"></span>Virtual Science Labs</div>
                 <div class="orbit-node n4"><span class="ic"><img src="{{ asset('images/icons/info.png') }}"
-                            alt="EdTech Consulting"></span>EdTech Consulting</div>
-                <div class="orbit-node n5"><span class="ic"><img src="{{ asset('images/icons/Developer_48px.png') }}" alt="School Websites"></span>School Websites</div>
+                            alt="EdTech Consulting" loading="lazy" decoding="async"></span>EdTech Consulting</div>
+                <div class="orbit-node n5"><span class="ic"><img src="{{ asset('images/icons/Developer_48px.png') }}" alt="School Websites" loading="lazy" decoding="async"></span>School Websites</div>
 
             </div>
         </div>
@@ -37,7 +37,7 @@
     <section class="about section-pad" id="about">
         <div class="wrap about-grid">
             <div class="about-media reveal">
-                <img src="{{ asset('images/gigotech-about.jpg') }}" alt="GIGOTECH team working on educational technology solutions">
+                <img src="{{ asset('images/gigotech-about.jpg') }}" alt="GIGOTECH team working on educational technology solutions" loading="lazy" decoding="async">
                 <div class="about-badge">Built for schools • Designed for growth</div>
             </div>
             <div class="about-copy reveal">
@@ -66,22 +66,26 @@
                 <div>
                     <span class="kicker">Trusted by</span>
                     <h2 class="sec-title">Schools and institutions that rely on our digital solutions.</h2>
-                    <p class="sec-lead">We’ve supported institutions across Nigeria with technology that is practical, scalable, and easy to adopt.</p>
+                    <p class="sec-lead">We’ve supported institutions across Nigeria with technology that is practical,
+                        scalable, and easy to adopt.</p>
                 </div>
             </div>
 
-            <div class="partners-grid">
-                <div class="partner-card reveal">
-                    <img src="{{ asset('images/partners-images/napps.jpg') }}" alt="Partner institution logo 1">
-                </div>
-                <div class="partner-card reveal">
-                    <img src="{{ asset('images/partners-images/EGG.jpg') }}" alt="Partner institution logo 2">
-                </div>
-                <div class="partner-card reveal">
-                    <img src="{{ asset('images/partners-images/aais.png') }}" alt="Partner institution logo 3">
-                </div>
-                <div class="partner-card reveal">
-                    <img src="{{ asset('images/partners-images/divinelight.png') }}" alt="Partner institution logo 4">
+            <!-- Modern Logo Strip -->
+            <div class="partners-logos">
+                <div class="logos-track">
+                    <img src="{{ asset('images/partners-images/napps.jpg') }}" alt="NAPPS" loading="lazy" decoding="async">
+                    <img src="{{ asset('images/partners-images/EGG.jpg') }}" alt="EGG" loading="lazy" decoding="async">
+                    <img src="{{ asset('images/partners-images/aais.png') }}" alt="AAIS" loading="lazy" decoding="async">
+                    <img src="{{ asset('images/partners-images/divinelight.png') }}" alt="Divine Light" loading="lazy"
+                        decoding="async">
+
+                    <!-- Duplicate for smooth infinite scroll -->
+                    <img src="{{ asset('images/partners-images/napps.jpg') }}" alt="NAPPS" loading="lazy" decoding="async">
+                    <img src="{{ asset('images/partners-images/EGG.jpg') }}" alt="EGG" loading="lazy" decoding="async">
+                    <img src="{{ asset('images/partners-images/aais.png') }}" alt="AAIS" loading="lazy" decoding="async">
+                    <img src="{{ asset('images/partners-images/divinelight.png') }}" alt="Divine Light" loading="lazy"
+                        decoding="async">
                 </div>
             </div>
         </div>
