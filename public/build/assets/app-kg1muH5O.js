@@ -1,0 +1,1 @@
+var e=document.getElementById(`navToggle`),t=document.getElementById(`navMenu`);e&&t&&e.addEventListener(`click`,()=>{t.classList.toggle(`hidden`)});
