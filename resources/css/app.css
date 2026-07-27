@@ -550,30 +550,45 @@ html.light-mode .hero-stats div strong {
     display: flex;
     align-items: center;
     justify-content: center;
+    isolation: isolate;
+}
+
+.orbit-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 8% 12%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 40%, transparent 70%);
+    filter: blur(24px);
+    z-index: 0;
 }
 
 .orbit-ring {
     position: absolute;
-    border: 1px dashed rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255,255,255,0.16);
     border-radius: 50%;
+    box-shadow: inset 0 0 32px rgba(255,255,255,0.04);
 }
 
 .orbit-ring.r1 {
     width: 300px;
     height: 300px;
+    border-style: dashed;
     animation: spin 34s linear infinite;
 }
 
 .orbit-ring.r2 {
     width: 440px;
     height: 440px;
+    border-style: dotted;
+    opacity: 0.8;
     animation: spin 50s linear infinite reverse;
 }
 
 .orbit-ring.r3 {
     width: 520px;
     height: 520px;
-    border-color: rgba(91, 157, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.22);
     animation: spin 70s linear infinite;
 }
 
@@ -590,19 +605,20 @@ html.light-mode .hero-stats div strong {
 .orbit-hub {
     position: relative;
     z-index: 3;
-    width: 132px;
-    height: 132px;
+    width: 142px;
+    height: 142px;
     border-radius: 50%;
-    background: linear-gradient(155deg, var(--gold) 0%, #133C99 100%);
+    background: linear-gradient(135deg, var(--gold) 0%, #f7b35b 45%, #133C99 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 0 10px rgba(38, 87, 217, 0.12), 0 0 60px rgba(38, 87, 217, 0.5);
+    box-shadow: 0 0 0 10px rgba(255,255,255,0.07), 0 0 70px rgba(38, 87, 217, 0.45), inset 0 0 28px rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.18);
 }
 
 .orbit-hub img {
-    width: 100px;
-    height: 100px;
+    width: 96px;
+    height: 96px;
     object-fit: contain;
     filter: brightness(0) invert(1);
 }
@@ -612,27 +628,29 @@ html.light-mode .hero-stats div strong {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(15, 30, 54, 0.9);
-    border: 1px solid var(--line);
+    background: linear-gradient(135deg, rgba(13, 26, 48, 0.96), rgba(27, 44, 75, 0.92));
+    border: 1px solid rgba(255,255,255,0.14);
     padding: 10px 16px 10px 12px;
     border-radius: 999px;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(10px);
     font-size: 13px;
     color: var(--white);
-    font-weight: 500;
+    font-weight: 600;
     white-space: nowrap;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
+    z-index: 2;
 }
 
 .orbit-node .ic {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 13px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
 }
 
 .n1 {
@@ -648,7 +666,7 @@ html.light-mode .hero-stats div strong {
 
 .n2 {
     top: 38%;
-    right: 0%;
+    right: 1%;
 }
 
 .n2 .ic {
@@ -658,7 +676,7 @@ html.light-mode .hero-stats div strong {
 
 .n3 {
     bottom: 10%;
-    right: 10%;
+    right: 8%;
 }
 
 .n3 .ic {
@@ -667,7 +685,7 @@ html.light-mode .hero-stats div strong {
 }
 
 .n4 {
-    bottom: 14%;
+    bottom: 12%;
     left: 2%;
 }
 
@@ -678,7 +696,7 @@ html.light-mode .hero-stats div strong {
 
 .n5 {
     top: 40%;
-    left: -2%;
+    left: -1%;
 }
 
 .n5 .ic {
@@ -706,6 +724,144 @@ html.light-mode .hero-stats div strong {
         width: 270px;
         height: 270px;
     }
+}
+
+@media (max-width: 640px) {
+    .orbit-wrap {
+        height: 320px;
+    }
+
+    .orbit-ring.r3 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .orbit-ring.r2 {
+        width: 240px;
+        height: 240px;
+    }
+
+    .orbit-ring.r1 {
+        width: 180px;
+        height: 180px;
+    }
+
+    .orbit-hub {
+        width: 104px;
+        height: 104px;
+    }
+
+    .orbit-hub img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .orbit-node {
+        padding: 7px 10px 7px 8px;
+        font-size: 10px;
+        gap: 7px;
+    }
+
+    .orbit-node .ic {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* ---------- ABOUT US ---------- */
+.about {
+    background: var(--white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.02fr 0.98fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.about-media {
+    position: relative;
+}
+
+.about-media img {
+    width: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(10, 22, 40, 0.16);
+}
+
+.about-badge {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    background: rgba(10, 22, 40, 0.86);
+    color: var(--white);
+    padding: 10px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.about-copy .sec-title {
+    max-width: none;
+}
+
+.about-points {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0 28px;
+}
+
+.about-point {
+    padding: 18px 20px;
+    border: 1px solid var(--line-dark);
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(238,245,255,0.85));
+}
+
+.about-point strong {
+    display: block;
+    color: var(--navy);
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.about-point p {
+    font-size: 14.5px;
+    color: var(--slate);
+}
+
+.partners {
+    background: var(--paper);
+    border-top: 1px solid var(--line-dark);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.partner-card {
+    min-height: 140px;
+    border-radius: 18px;
+    border: 1px solid var(--line-dark);
+    background: var(--white);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.partner-card img {
+    width: 100%;
+    max-height: 86px;
+    object-fit: contain;
+    filter: grayscale(0.22);
 }
 
 /* ---------- MARQUEE / TRUST ---------- */
@@ -777,6 +933,10 @@ html.light-mode .hero-stats div strong {
 
 .sec-title.on-dark {
     color: var(--white);
+}
+
+html.light-mode .sec-title.on-dark {
+    color: var(--text-primary);
 }
 
 .sec-lead {
@@ -1711,6 +1871,21 @@ html.light-mode .footer-col a {
     }
 }
 
+@media (max-width:1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .about-media img {
+        min-height: 340px;
+    }
+
+    .partners-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width:900px) {
     .nav-links {
         display: none;
@@ -1878,6 +2053,14 @@ html.light-mode .footer-col a {
     .cta-actions .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .about-media img {
+        min-height: 280px;
+    }
+
+    .partners-grid {
+        grid-template-columns: 1fr;
     }
 
     .contact-info-item {
