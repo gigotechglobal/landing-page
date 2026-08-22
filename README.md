@@ -170,4 +170,3 @@ This project uses the MIT license (see `composer.json`).
 
 ---
 
-If you want, I can also add a CONTRIBUTING.md with a checklist (tests, linting, PR template) and a short section about code ownership and approvals.

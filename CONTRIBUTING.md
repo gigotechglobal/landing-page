@@ -80,7 +80,7 @@ composer test
 
 ## Code ownership
 
-- This repository includes a CODEOWNERS file to automatically request reviews from owners for specific paths. Update `.github/CODEOWNERS` as needed to reflect current maintainers or teams.
+- This repository includes a CODEOWNERS file to automatically request reviews from owners for specific paths. 
 
 ## Small fixes
 
