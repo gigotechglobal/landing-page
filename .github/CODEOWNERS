@@ -1,0 +1,9 @@
+# For everything in the repo, request review from the core maintainers/team
+* @gigotechglobal @gospelin
+
+# Per-path owners:
+# Frontend views
+/resources/views/ @gospelin @delivingbz
+
+# Backend app code
+/app/ @gigotechglobal @gospelin
