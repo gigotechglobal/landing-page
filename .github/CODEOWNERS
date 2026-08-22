@@ -1,0 +1,9 @@
+# Example CODEOWNERS file — replace placeholders with real GitHub usernames or teams
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# For everything in the repo, request review from the core maintainers/team
+* @your-org/your-team
+
+# Example per-path owners:
+/resources/views/ @gospelin
+/app/ @gospelin
