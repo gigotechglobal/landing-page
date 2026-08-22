@@ -9,6 +9,21 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: gigotechglobal
+          MYSQL_USER: github_action
+          MYSQL_PASSWORD: github_pass
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
 
     steps:
       - name: Checkout
@@ -19,12 +34,14 @@ jobs:
         with:
           php-version: '8.3'
           coverage: none
-          extensions: pdo_sqlite
+          extensions: mbstring, xml, pdo_sqlite, ctype, json, tokenizer, fileinfo, openssl
 
       - name: Get Composer Cache
         uses: actions/cache@v4
         with:
-          path: ~/.composer/cache
+          path: |
+            ~/.composer/cache
+            vendor
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-
@@ -32,19 +49,43 @@ jobs:
       - name: Install PHP dependencies
         run: composer install --no-progress --no-suggest --prefer-dist --no-interaction
 
-      - name: Setup Node.js
+      - name: Setup Node.js (for npm)
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
 
       - name: Install node dependencies
         run: npm ci
 
-      - name: Prepare environment
+      - name: Prepare environment (.env + APP_KEY)
         run: |
           cp .env.example .env
-          php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
+          # Configure DB to use MySQL service
+          sed -i "s/^DB_CONNECTION=.*/DB_CONNECTION=mysql/" .env || true
+          sed -i "s/^DB_HOST=.*/DB_HOST=127.0.0.1/" .env || true
+          sed -i "s/^DB_PORT=.*/DB_PORT=3306/" .env || true
+          sed -i "s/^DB_DATABASE=.*/DB_DATABASE=gigotechglobal/" .env.example || true
+          sed -i "s/^DB_USERNAME=.*/DB_USERNAME=github_action/" .env.example || true
+          sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=github_pass/" .env.example || true
           php artisan key:generate --ansi
+
+      - name: Wait for MySQL to be ready
+        run: |
+          php -r '
+          $tries = 0;
+          $max = 60;
+          while (true) {
+              try {
+                  new PDO("mysql:host=127.0.0.1;port=3306;dbname=gigotechglobal", "github_action", "github_pass");
+                  echo "MySQL is ready\n";
+                  break;
+              } catch (Exception $e) {
+                  if (++$tries > $max) { echo "MySQL did not become ready\n"; exit(1); }
+                  sleep(1);
+              }
+          }
+          '
 
       - name: Run migrations
         run: php artisan migrate --force
