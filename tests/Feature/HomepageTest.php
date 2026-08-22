@@ -4,5 +4,6 @@ test('homepage loads and contains the hero heading', function () {
     $response = $this->get('/');
 
     $response->assertStatus(200);
-    $response->assertSee('Transforming \nEducation');
+    // Use assertSeeText to match rendered text content (ignores HTML tags/newlines)
+    $response->assertSeeText('Transforming Education');
 });
