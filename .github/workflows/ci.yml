@@ -9,14 +9,20 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+      DB_USERNAME: ${{ secrets.MYSQL_USER }}
+      DB_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
     services:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: gigotechglobal
-          MYSQL_USER: github_action
-          MYSQL_PASSWORD: github_pass
+          MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+          MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+          MYSQL_USER: ${{ secrets.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
         ports:
           - 3306:3306
         options: >-
@@ -52,32 +58,50 @@ jobs:
       - name: Setup Node.js (for npm)
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 24
           cache: 'npm'
 
-      - name: Install node dependencies
-        run: npm ci
+      - name: Install node dependencies (try `npm ci`, fallback to `npm install`)
+        run: |
+          npm ci || npm install
 
       - name: Prepare environment (.env + APP_KEY)
+        env:
+          DB_CONNECTION: mysql
+          DB_HOST: ${{ env.DB_HOST }}
+          DB_PORT: ${{ env.DB_PORT }}
+          DB_DATABASE: ${{ env.DB_DATABASE }}
+          DB_USERNAME: ${{ env.DB_USERNAME }}
+          DB_PASSWORD: ${{ env.DB_PASSWORD }}
         run: |
           cp .env.example .env
-          # Configure DB to use MySQL service
-          sed -i "s/^DB_CONNECTION=.*/DB_CONNECTION=mysql/" .env || true
-          sed -i "s/^DB_HOST=.*/DB_HOST=127.0.0.1/" .env || true
-          sed -i "s/^DB_PORT=.*/DB_PORT=3306/" .env || true
-          sed -i "s/^DB_DATABASE=.*/DB_DATABASE=gigotechglobal/" .env.example || true
-          sed -i "s/^DB_USERNAME=.*/DB_USERNAME=github_action/" .env.example || true
-          sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=github_pass/" .env.example || true
+          sed -i "s/^DB_CONNECTION=.*/DB_CONNECTION=${DB_CONNECTION}/" .env || true
+          sed -i "s/^DB_HOST=.*/DB_HOST=${DB_HOST}/" .env || true
+          sed -i "s/^DB_PORT=.*/DB_PORT=${DB_PORT}/" .env || true
+          sed -i "s/^DB_DATABASE=.*/DB_DATABASE=${DB_DATABASE}/" .env || true
+          sed -i "s/^DB_USERNAME=.*/DB_USERNAME=${DB_USERNAME}/" .env || true
+          sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=${DB_PASSWORD}/" .env || true
           php artisan key:generate --ansi
 
       - name: Wait for MySQL to be ready
+        env:
+          DB_HOST: ${{ env.DB_HOST }}
+          DB_PORT: ${{ env.DB_PORT }}
+          DB_DATABASE: ${{ env.DB_DATABASE }}
+          DB_USERNAME: ${{ env.DB_USERNAME }}
+          DB_PASSWORD: ${{ env.DB_PASSWORD }}
         run: |
           php -r '
           $tries = 0;
           $max = 60;
+          $host = getenv("DB_HOST") ?: "127.0.0.1";
+          $port = getenv("DB_PORT") ?: 3306;
+          $db = getenv("DB_DATABASE") ?: "test";
+          $user = getenv("DB_USERNAME");
+          $pass = getenv("DB_PASSWORD");
           while (true) {
               try {
-                  new PDO("mysql:host=127.0.0.1;port=3306;dbname=gigotechglobal", "github_action", "github_pass");
+                  new PDO("mysql:host={$host};port={$port};dbname={$db}", $user, $pass);
                   echo "MySQL is ready\n";
                   break;
               } catch (Exception $e) {

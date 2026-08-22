@@ -164,6 +164,19 @@ php artisan config:clear
 - Routes: [routes/web.php](routes/web.php)
 - Main view: [resources/views/welcome.blade.php](resources/views/welcome.blade.php)
 
+## GitHub Secrets (CI)
+
+The CI workflow requires a few repository Secrets configured under *Settings → Secrets and variables → Actions*. Add the following secrets:
+
+- `MYSQL_ROOT_PASSWORD` — root password for the MySQL service used in CI.
+- `MYSQL_DATABASE` — database name (recommended: `gigotechglobal`).
+- `MYSQL_USER` — DB user for CI (recommended: `github_action`).
+- `MYSQL_PASSWORD` — password for the `MYSQL_USER` account.
+
+Notes:
+- The workflow creates `.env` from `.env.example` and replaces the DB fields with the values above, so you don't need to commit a `.env` file.
+- Once you add the secrets, push a branch or open a PR and the CI run will use them to provision the test database.
+
 ## License
 
 This project uses the MIT license (see `composer.json`).
