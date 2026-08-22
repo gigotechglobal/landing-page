@@ -182,4 +182,5 @@ Notes:
 This project uses the MIT license (see `composer.json`).
 
 ---
+---
 
