@@ -64,6 +64,10 @@ jobs:
       - name: Install node dependencies (try `npm ci`, fallback to `npm install`)
         run: |
           npm ci || npm install
+        
+      - name: Fix audit vulnerabilities
+        run: |
+          npm audit fix || true
 
       - name: Build assets (Vite)
         run: |
