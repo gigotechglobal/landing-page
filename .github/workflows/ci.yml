@@ -65,6 +65,10 @@ jobs:
         run: |
           npm ci || npm install
 
+      - name: Build assets (Vite)
+        run: |
+          npm run build
+
       - name: Prepare environment (.env + APP_KEY)
         env:
           DB_CONNECTION: mysql
